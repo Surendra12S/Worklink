@@ -1,0 +1,27 @@
+.navbarContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.navbarList{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.navbarList li{
+    cursor: pointer;
+    border: 1px solid gray;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.navbarList li:hover{
+    background-color: gray;
+}

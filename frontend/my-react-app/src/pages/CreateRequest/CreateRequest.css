@@ -1,0 +1,64 @@
+.CreatRequestformContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.createRequestWrapper{
+    height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+}
+
+.createRequrestCard{
+    width: 320px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.createRequrestCard h2{
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.CreatRequestformContainer input{
+    margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.CreatRequestformContainer input:focus{
+    outline: none;
+  border-color: #4a90e2;
+}
+
+.CreatRequestformContainer button{
+     padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.CreatRequestformContainer textarea{
+    height: 200px;
+    margin-bottom: 15px;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.CreatRequestformContainer select{
+    margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
