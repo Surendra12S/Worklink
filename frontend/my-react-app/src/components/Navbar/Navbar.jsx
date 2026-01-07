@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 
 
+
 function Navbar({ isLoggedIn, setIsLoggedIn }){
 
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }){
                     <Link to={"/home"} ><li>Home</li></Link>
                     <Link to={"/createRequest"} ><li>Post Request</li></Link>
                    <Link to={"/myPosts"} ><li>My Posts</li></Link> 
-                    <li>My Applications</li>
+                   <Link to={"/myApplications"} ><li>My Applications</li></Link> 
                     <li onClick={handleLogout} >Logout</li>
                     </>
                 ) : (

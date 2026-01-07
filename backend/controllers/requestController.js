@@ -4,7 +4,7 @@ const Request = require("../models/Request.js");
 const createRequest = async (req,res)=>{
 
     try{
-    const { title,description,category,location} = req.body;
+    const { title,description,category,location } = req.body;
 
     if(!title || !description || !category || !location){
         return res.status(400).json({message : "All fields are required"});

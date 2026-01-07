@@ -6,6 +6,8 @@ import Home from "./pages/Home/Home.jsx";
 import { useState } from "react";
 import MyPost from "./pages/MyPost/MyPost.jsx";
 import CreateRequest from "./pages/CreateRequest/CreateRequest.jsx";
+import MyApplications from "./myApplicatons/MyApplications.jsx";
+import ViewApplicants from "./viewApplicants/viewApplicants.jsx";
 
 function App(){
 
@@ -21,6 +23,8 @@ function App(){
             <Route path="/createRequest" element={<CreateRequest/>} />
             <Route path="/myPosts" element={<MyPost/>} />
             <Route path="/home" element={<Home/>} />
+            <Route path="/myApplications" element={<MyApplications/>} />
+            <Route path="/my-posts/:requestId/applications" element={<ViewApplicants />} />
            </Routes>
 
         </div>
