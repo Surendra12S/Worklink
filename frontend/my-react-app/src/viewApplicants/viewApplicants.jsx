@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import API from "../api.js";
-
+import "./ViewApplicants.css";
 
 function ViewApplicants() {
     const { requestId } = useParams();

@@ -1,64 +1,130 @@
-.CreatRequestformContainer{
-    display: flex;
-    flex-direction: column;
-}
-
-.createRequestWrapper{
-    height: 92vh;
+/* ===============================
+   PAGE WRAPPER
+================================ */
+.createRequestWrapper {
+  min-height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4f6f8;
+  background-color: #f4f6f8;
+  padding: 20px;
 }
 
-.createRequrestCard{
-    width: 320px;
-  padding: 25px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+/* ===============================
+   CARD
+================================ */
+.createRequrestCard {
+  width: 100%;
+  max-width: 420px;
+
+  background-color: #ffffff;
+  padding: 28px 30px;
+
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   TITLE
+================================ */
+.createRequrestCard h2 {
+  margin-bottom: 22px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
   text-align: center;
 }
 
-.createRequrestCard h2{
-  margin-bottom: 20px;
-  color: #333;
+/* ===============================
+   FORM
+================================ */
+.CreatRequestformContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.CreatRequestformContainer input{
-    margin-bottom: 15px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+/* ===============================
+   INPUTS / SELECT / TEXTAREA
+================================ */
+.CreatRequestformContainer input,
+.CreatRequestformContainer textarea,
+.CreatRequestformContainer select {
+  width: 100%;
+  padding: 12px 14px;
+
   font-size: 14px;
+  color: #111827;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.CreatRequestformContainer input:focus{
-    outline: none;
-  border-color: #4a90e2;
+.CreatRequestformContainer textarea {
+  resize: none;
+  height: 140px;
 }
 
-.CreatRequestformContainer button{
-     padding: 12px;
-  background: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
+/* Placeholder */
+.CreatRequestformContainer input::placeholder,
+.CreatRequestformContainer textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus */
+.CreatRequestformContainer input:focus,
+.CreatRequestformContainer textarea:focus,
+.CreatRequestformContainer select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ===============================
+   SELECT FIX
+================================ */
+.CreatRequestformContainer select {
   cursor: pointer;
 }
 
-.CreatRequestformContainer textarea{
-    height: 200px;
-    margin-bottom: 15px;
-    padding-top: 2px;
-    padding-left: 2px;
+/* ===============================
+   SUBMIT BUTTON
+================================ */
+.CreatRequestformContainer button {
+  margin-top: 10px;
+
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+
+  background-color: #2563eb;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.CreatRequestformContainer select{
-    margin-bottom: 15px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+.CreatRequestformContainer button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  .createRequrestCard {
+    padding: 22px 20px;
+  }
+
+  .createRequrestCard h2 {
+    font-size: 20px;
+  }
 }

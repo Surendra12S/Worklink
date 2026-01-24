@@ -65,7 +65,7 @@ function Home() {
                     {requests.map((req) => {
                         // STEP 4: Check if this specific card is "applied"
                         const isApplied = appliedRequestIds.includes(req._id);
-
+                        
                         return (
                             <div key={req._id} className="request-card">
                                 <div className="card-header">

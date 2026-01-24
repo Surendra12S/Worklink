@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../api.js";
+import "./MyApplications.css";
 
 function MyApplications() {
     const [applications, setApplications] = useState([]);

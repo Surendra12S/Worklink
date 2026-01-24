@@ -1,27 +1,248 @@
-.navbarContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around; 
-    padding: 10px;
-    border-bottom: 2px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ============================================
+   ENHANCED NAVBAR STYLES - SaaS Production UI
+   ============================================ */
+
+:root {
+  --bg-main: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --brand: #2563eb;
+  --brand-soft: #eff6ff;
+  --border-light: #e2e8f0;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
-.navbarList{
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    font-weight: bold;
-    font-size: larger;
+/* --- Clean Reset for Links --- */
+.navbarContainer a, 
+.navbarList a {
+  text-decoration: none !important;
+  color: inherit;
+  display: flex;
+  align-items: center;
 }
 
-.navbarList li{
-    cursor: pointer;
-    border: 1px solid gray;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
+/* --- Main Container --- */
+.navbarContainer {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 5vw, 80px);
+  height: 72px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
 }
-.navbarList li:hover{
-    background-color: gray;
+
+/* --- Logo Styling --- */
+.navbarContainer h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.75px;
+  margin: 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.navbarContainer h1::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), #3b82f6);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.navbarContainer > a:hover h1::after {
+  width: 100%;
+}
+
+.navbarContainer > a:hover h1 {
+  color: var(--brand);
+}
+
+/* --- Navigation List --- */
+.navbarList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Navigation Items --- */
+.navbarList li {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbarList li:hover {
+  color: var(--text-dark);
+  background-color: #f8fafc;
+}
+
+.navbarList li:active {
+  transform: scale(0.98);
+}
+
+/* --- Focus States for Accessibility --- */
+.navbarList a:focus-visible li,
+.navbarList li:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* --- CTA Button (Post Request) --- */
+.navbarList a[href="/createRequest"] li {
+  background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+  color: #ffffff !important;
+  padding: 10px 22px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.navbarList a[href="/createRequest"] li:hover {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.navbarList a[href="/createRequest"] li:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Logout Style --- */
+.logout-btn {
+  color: #dc2626 !important;
+  font-weight: 600;
+  background: transparent;
+}
+
+.logout-btn:hover {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+}
+
+/* --- Active Link Indicator (Optional Enhancement) --- */
+.navbarList a[href="/home"] li,
+.navbarList a[href="/myPosts"] li,
+.navbarList a[href="/myApplications"] li {
+  position: relative;
+}
+
+.navbarList a[href="/home"] li::before,
+.navbarList a[href="/myPosts"] li::before,
+.navbarList a[href="/myApplications"] li::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: calc(100% - 24px);
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+  transition: transform 0.25s ease;
+}
+
+.navbarList a[href="/home"]:hover li::before,
+.navbarList a[href="/myPosts"]:hover li::before,
+.navbarList a[href="/myApplications"]:hover li::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* --- Login/Signup Styling --- */
+.navbarList a[href="/login"] li {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.navbarList a[href="/login"] li:hover {
+  color: var(--brand);
+  background-color: var(--brand-soft);
+}
+
+.navbarList a[href="/signup"] li {
+  background: var(--brand);
+  color: #ffffff !important;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.navbarList a[href="/signup"] li:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.navbarList a[href="/signup"] li:active {
+  transform: translateY(0);
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 1024px) {
+  .navbarContainer {
+    padding: 0 24px;
+    height: 68px;
+  }
+  
+  .navbarList {
+    gap: 4px;
+  }
+  
+  .navbarList li {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .navbarList a[href="/createRequest"] li,
+  .navbarList a[href="/signup"] li {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 16px;
+    height: 64px;
+  }
+  
+  .navbarContainer h1 {
+    font-size: 18px;
+  }
+  
+  .navbarList {
+    gap: 2px;
+  }
+  
+  .navbarList li {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
 }

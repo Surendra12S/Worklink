@@ -1,13 +1,13 @@
 /* ===============================
    PAGE CONTAINER
 ================================ */
-.my-posts-container {
+.my-apps-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 32px 20px;
 }
 
-.my-posts-container h2 {
+.my-apps-container h1 {
   font-size: 26px;
   font-weight: 700;
   color: #111827;
@@ -25,18 +25,18 @@
 }
 
 /* ===============================
-   POSTS GRID
+   APPLICATION LIST
 ================================ */
-.posts-grid {
+.apps-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
 }
 
 /* ===============================
-   POST CARD
+   APPLICATION CARD
 ================================ */
-.post-card {
+.app-card {
   background-color: #ffffff;
   border-radius: 14px;
   padding: 18px 20px;
@@ -51,7 +51,7 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.post-card:hover {
+.app-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
 }
@@ -59,7 +59,7 @@
 /* ===============================
    CARD HEADER
 ================================ */
-.card-header {
+.app-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,81 +67,77 @@
 }
 
 /* ===============================
-   TITLE
+   CATEGORY TAG
 ================================ */
-.post-card h3 {
-  font-size: 17px;
+.category-tag {
+  background-color: #e0e7ff;
+  color: #1d4ed8;
+
+  font-size: 12px;
   font-weight: 600;
-  color: #111827;
-  margin: 0;
-  line-height: 1.3;
+
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 /* ===============================
-   STATUS BADGES
+   STATUS BADGES (APPLICATION)
 ================================ */
 .status-badge {
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
-/* Open */
-.status-badge.open {
-  background-color: #e0e7ff;
-  color: #1d4ed8;
-}
-
-/* In progress */
-.status-badge.in_progress {
+/* Pending */
+.status-badge.pending {
   background-color: #fef3c7;
   color: #92400e;
 }
 
-/* Completed */
-.status-badge.completed {
+/* Accepted */
+.status-badge.accepted {
   background-color: #dcfce7;
   color: #166534;
 }
 
-/* ===============================
-   META INFO
-================================ */
-.category {
-  font-size: 13px;
-  color: #374151;
+/* Rejected */
+.status-badge.rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
-.location {
+/* ===============================
+   TITLE
+================================ */
+.app-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin: 4px 0;
+  line-height: 1.3;
+}
+
+/* ===============================
+   LOCATION
+================================ */
+.location-text {
   font-size: 13px;
   color: #6b7280;
 }
 
 /* ===============================
-   ACTION BUTTON
+   FOOTER / DATE
 ================================ */
-.view-apps-btn {
+.app-card-footer {
   margin-top: auto;
-
-  background-color: #2563eb;
-  color: #ffffff;
-
-  border: none;
-  border-radius: 10px;
-
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.view-apps-btn:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-1px);
+.date-text {
+  font-size: 12px;
+  color: #9ca3af;
 }
 
 /* ===============================
@@ -158,15 +154,15 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 640px) {
-  .my-posts-container {
+  .my-apps-container {
     padding: 20px 14px;
   }
 
-  .my-posts-container h2 {
+  .my-apps-container h1 {
     font-size: 22px;
   }
 
-  .post-card {
+  .app-card {
     padding: 16px;
   }
 }
